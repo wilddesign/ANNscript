@@ -1,5 +1,5 @@
-# the data are normalized: loading vs 100%, concentration to 0-10,TON 0-10000 
-#Loading, Concentration, Yield, Selectivity
+# the data are normalized: loading vs 100%, concentration range 1-0.1,Yield %, Selectivity %
+# catalyst loading, Concentration, Yield, Selectivity
 0.5,1,.09,.99
 0.25,1,.10,.89
 0.1,1,.21,.80

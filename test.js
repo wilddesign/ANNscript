@@ -1,4 +1,11 @@
 console.log('start');
+var fs = require('fs');
+var papa = require('papaparse');
+var synaptic = require('synaptic');
+
+console.log('deps loaded');
+
+var fname = 'data.csv';
 
 function parseForSyn(csvJSON){
 var parsedForSyn = [];
@@ -19,15 +26,6 @@ console.log('Training data: ');
 return parsedForSyn;
 };
 
-
-
-var fname = 'data.csv';
-
-
-var fs = require('fs');
-var papa = require('papaparse');
-var synaptic = require('synaptic');
-console.log('deps loaded');
 
 //load the file, parse it to json and calculate in callback
 var datafile = fs.readFile(fname, 'utf8', function(err, data){
@@ -53,9 +51,9 @@ var datafile = fs.readFile(fname, 'utf8', function(err, data){
 						iterations: 200000,
 						error: .005,
 						shuffle: true,
-						log: 50000,
 						cost: synaptic.Trainer.cost.CROSS_ENTROPY
 					});
+					console.log('Simulated results: ');
 					console.log(network.activate([0.01,.1]));
 
 				/////////////////////////////////////////////
